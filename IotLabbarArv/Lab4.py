@@ -8,7 +8,6 @@ class FordonsAnnons(ABC):
         self._year = year
         self._antalmil = antalmil
 
-    
     @abstractmethod
     def GetAnnonsText(self):
         pass
@@ -22,12 +21,15 @@ class BilAnnons(FordonsAnnons):
     def GetAnnonsText(self):
         s = f"""{self._rubrik} {self._color} {self._pris} kr
 {self._beskrivning} Årsmodell: {self._year} Antal mil: {self._antalmil}"""
+
         if self._summerTires:    
             s = s + """
             Sommardäck ingår"""
+
         if self._winterTires:    
             s = s + """
             Vinterdäck ingår"""
+
         return s
 
 class HusvagnsAnnons(FordonsAnnons):
