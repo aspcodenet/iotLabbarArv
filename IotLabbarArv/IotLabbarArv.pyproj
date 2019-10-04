@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>cd1745f1-6ab6-406b-af21-99ede302ae2f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Lab6.py</StartupFile>
+    <StartupFile>module2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,12 @@
     <Compile Include="Lab4.py" />
     <Compile Include="Lab3.py" />
     <Compile Include="Lab2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="module2.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

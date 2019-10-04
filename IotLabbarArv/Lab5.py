@@ -7,6 +7,10 @@ class Order(ABC):
         self._number = number
         self._customer = customer
     
+    def ChangeCustomerName(self, newName):
+        self._customer.SetName(newName)
+
+
     @abstractmethod
     def confirm(self):
         pass
@@ -16,8 +20,8 @@ class Order(ABC):
         pass
 
 class SpecialOrder(Order):
-    def __init__(self, date,number,customer):
-        super().__init__(date,number,customer)
+    def __init__(self, date,number, customer):
+        super().__init__(date,number, customer)
 
     def confirm(self):
         pass
@@ -47,17 +51,32 @@ class NormalOrder(Order):
         pass
 
 
-class Customer():
+class Customer:
     def __init__(self, name, location):
         self._name = name
         self._location = location
 
+    def SetName(self, newName):
+        self._name = newName
+
+    def GetName(self):
+       return self._name
+
+    def sendOrder(self):
+        pass
+
+    def receiveOrder(self):
+        pass
+    
 
 
 c = Customer("Stefan", "Nacka")
 c2 = Customer("Kerstin", "Nacka")
 
 o1 = NormalOrder(datetime.now(),"123",c)
+o1.ChangeCustomerName("kalle")
+print(c.GetName())
+
 o2 = SpecialOrder(datetime.now(),"124",c)
-o2 = NormalOrder(datetime.now(),"125",c2)
+o3 = NormalOrder(datetime.now(),"125",c2)
 

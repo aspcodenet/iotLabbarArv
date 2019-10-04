@@ -6,16 +6,16 @@ class Account:
     def GetKontoNummer(self):
         return self._kontonummer
 
-    def Withdraw(belopp):
+    def Withdraw(self,belopp):
         if self._saldo < belopp:
             return False
         self._saldo -= belopp
         return True
 
-    def Deposit(belopp):
+    def Deposit(self,belopp):
         self._saldo += belopp
 
-    def GetSaldo(belopp):
+    def GetSaldo(self,belopp):
         self._saldo += belopp
 
 class User:
@@ -23,6 +23,7 @@ class User:
         self._username = username
         self._password = password
         self._accounts = []
+
 
     def AddAccount(self,accountNumber):
         self._accounts.append(Account(accountNumber))
@@ -41,6 +42,9 @@ class User:
         
     
 a = User("stefan", "nafets")
+
+
+
 a.AddAccount("12345")
 a.AddAccount("44455")
 
